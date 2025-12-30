@@ -12,11 +12,17 @@ The game blends storytelling, exploration, and technology to create an immersive
 🚀 Features:
 
 -Login System: Secure Internet Identity authentication
+
 -Dynamic Story Map: Real-time map of Kokkola with live user GPS tracking
+
 -QR Code Scanning: Built with native browser MediaDevices API (no third-party services)
+
 -Audio Narration: Story playback using built-in HTML5 audio player
+
 -Progress Persistence: Fully reliable backend logic storing progress permanently across sessions
+
 -Offline Sync: Local cache and auto-sync for unstable networks
+
 -Beautiful UI: Game-inspired layout using golden ratio alignment and Kokkola landscape backgrounds
 
 🏗️ Tech Stack:
@@ -24,15 +30,21 @@ The game blends storytelling, exploration, and technology to create an immersive
 #Frontend:
 
 -React + TypeScript
+
 -Tailwind CSS for styling and responsive design
+
 -Leaflet.js for live maps
+
 -Web APIs (MediaDevices, Geolocation, HTML5 Audio)
 
 #Backend:
 
 -Motoko language running on Internet Computer Canisters
+
 -Persistent Map structures for user profiles and progress storage
+
 -Role-based access control and data authorization
+
 -On-chain file handling for audio and images
 
 🧩 Key Modules:
@@ -40,39 +52,58 @@ The game blends storytelling, exploration, and technology to create an immersive
 #File	Descriptions:
 
 -main.mo	Main logic: stories, locations, and progress management
+
 -access-control.mo	Role & permission handling (Admin, User, Guest)
+
 -Storage.mo / Mixin.mo	File and blob storage for story images & audio
+
 -App.tsx	Handles session, loading, and navigation between game screens
+
 -ScannerView.tsx	QR scanning and quest pop-up logic
+
 -QuestTaskPopup.tsx	Story modal with audio controls and “Done” progress save
+
 -ProgressView.tsx	Displays overall story completion status
 
 🗺️ How It Works:
 
 -Users sign in using Internet Identity.
+
 -The map shows Kokkola story locations; users must physically travel there.
+
 -Scanning a QR code launches a story pop-up with narration.
+
 -On completing each quest, the story progress is saved permanently to the backend.
+
 -Progress is restored automatically when users return later.
+
 
 🔧 Development Setup:
 
 -Clone or download this repo
+
 -Install dependencies:
+
 -npm install
 
 #Run the frontend locally:
+
 -npm run dev
 
 #For backend (Internet Computer):
+
 -dfx start
+
 -dfx deploy
 
 🧭 Future Plans:
 
 -Add new stories and more locations in Kokkola.
+
 -Expand multiplayer or community features.
+
 -Integrate achievements and leaderboard system.
+
 -Fix progress saving and tracking.
 
 📚 References:
