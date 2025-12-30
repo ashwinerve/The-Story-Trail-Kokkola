@@ -116,7 +116,7 @@ The game blends storytelling, exploration, and technology to create an immersive
 
 -Leaflet.js Documentation (2024). Available at: https://leafletjs.com/ (Accessed: 10 October 2025)
 
--Caffeine AI IDE (2025). Available at: https://caffeine.ai/ ((Accessed: 15 September 2025)
+-Caffeine AI Assistant (2025). Available at: https://caffeine.ai/ ((Accessed: 15 September 2025)
 
 
 
