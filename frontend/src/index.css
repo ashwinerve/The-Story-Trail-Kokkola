@@ -1,0 +1,214 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    :root {
+        --radius: 0.75rem;
+        --background: 0.98 0 0;
+        --foreground: 0.2 0 0;
+        --card: 1 0 0;
+        --card-foreground: 0.2 0 0;
+        --popover: 1 0 0;
+        --popover-foreground: 0.2 0 0;
+        --primary: 0.55 0.15 35;
+        --primary-foreground: 0.98 0 0;
+        --secondary: 0.92 0.05 85;
+        --secondary-foreground: 0.2 0 0;
+        --muted: 0.95 0 0;
+        --muted-foreground: 0.5 0 0;
+        --accent: 0.65 0.18 120;
+        --accent-foreground: 0.98 0 0;
+        --destructive: 0.55 0.22 25;
+        --destructive-foreground: 0.98 0 0;
+        --border: 0.9 0 0;
+        --input: 0.9 0 0;
+        --ring: 0.55 0.15 35;
+        --chart-1: 0.6 0.2 35;
+        --chart-2: 0.65 0.18 120;
+        --chart-3: 0.55 0.15 200;
+        --chart-4: 0.7 0.2 280;
+        --chart-5: 0.6 0.18 320;
+        --sidebar: 0.98 0 0;
+        --sidebar-foreground: 0.2 0 0;
+        --sidebar-primary: 0.55 0.15 35;
+        --sidebar-primary-foreground: 0.98 0 0;
+        --sidebar-accent: 0.95 0 0;
+        --sidebar-accent-foreground: 0.2 0 0;
+        --sidebar-border: 0.9 0 0;
+        --sidebar-ring: 0.55 0.15 35;
+        --adventure-start: 0.55 0.15 35;
+        --adventure-end: 0.45 0.18 25;
+    }
+
+    .dark {
+        --background: 0.15 0 0;
+        --foreground: 0.95 0 0;
+        --card: 0.2 0 0;
+        --card-foreground: 0.95 0 0;
+        --popover: 0.18 0 0;
+        --popover-foreground: 0.95 0 0;
+        --primary: 0.7 0.18 40;
+        --primary-foreground: 0.15 0 0;
+        --secondary: 0.3 0.05 85;
+        --secondary-foreground: 0.95 0 0;
+        --muted: 0.25 0 0;
+        --muted-foreground: 0.65 0 0;
+        --accent: 0.5 0.15 120;
+        --accent-foreground: 0.95 0 0;
+        --destructive: 0.6 0.22 25;
+        --destructive-foreground: 0.95 0 0;
+        --border: 0.3 0 0;
+        --input: 0.3 0 0;
+        --ring: 0.7 0.18 40;
+        --chart-1: 0.65 0.2 35;
+        --chart-2: 0.7 0.18 120;
+        --chart-3: 0.6 0.15 200;
+        --chart-4: 0.75 0.2 280;
+        --chart-5: 0.65 0.18 320;
+        --sidebar: 0.2 0 0;
+        --sidebar-foreground: 0.95 0 0;
+        --sidebar-primary: 0.7 0.18 40;
+        --sidebar-primary-foreground: 0.15 0 0;
+        --sidebar-accent: 0.25 0 0;
+        --sidebar-accent-foreground: 0.95 0 0;
+        --sidebar-border: 0.3 0 0;
+        --sidebar-ring: 0.7 0.18 40;
+        --adventure-start: 0.35 0.15 35;
+        --adventure-end: 0.25 0.18 25;
+    }
+
+    * {
+        @apply border-border;
+    }
+    body {
+        @apply bg-background text-foreground;
+    }
+}
+
+@layer utilities {
+    .bg-gradient-adventure {
+        background: linear-gradient(135deg, oklch(var(--adventure-start)), oklch(var(--adventure-end)));
+    }
+    
+    /* Optimized background with immediate high-quality image loading */
+    .adventure-bg {
+        position: relative;
+        background-color: #3a4a5a; /* Fallback color matching image tone */
+        background-image: url('/assets/kokkola pic.jpg');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        /* Performance optimizations */
+        will-change: auto;
+        transform: translateZ(0);
+        backface-visibility: hidden;
+        /* Modern browser caching hints */
+        image-rendering: -webkit-optimize-contrast;
+        image-rendering: crisp-edges;
+    }
+    
+    /* Overlay for better content readability */
+    .adventure-bg > * {
+        position: relative;
+        z-index: 1;
+    }
+    
+    /* Mobile-specific optimizations */
+    @media (max-width: 768px) {
+        .adventure-bg {
+            /* Use background-attachment: scroll on mobile for better performance */
+            background-attachment: scroll;
+            /* Optimize for mobile rendering */
+            image-rendering: auto;
+        }
+    }
+    
+    /* Responsive background positioning */
+    @media (max-width: 640px) {
+        .adventure-bg {
+            background-size: cover;
+            background-position: center center;
+        }
+    }
+    
+    @media (min-width: 641px) and (max-width: 1024px) {
+        .adventure-bg {
+            background-size: cover;
+            background-position: center center;
+        }
+    }
+    
+    @media (min-width: 1025px) {
+        .adventure-bg {
+            background-size: cover;
+            background-position: center center;
+        }
+    }
+}
+
+/* Leaflet map custom styling */
+.leaflet-container {
+    font-family: inherit;
+}
+
+.leaflet-popup-content-wrapper {
+    border-radius: 0.75rem;
+    box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+    padding: 0;
+}
+
+.leaflet-popup-content {
+    margin: 0;
+}
+
+.leaflet-popup-tip {
+    background: white;
+}
+
+.dark .leaflet-popup-tip {
+    background: oklch(var(--card));
+}
+
+.custom-marker {
+    background: transparent;
+    border: none;
+}
+
+.user-location-marker {
+    background: transparent;
+    border: none;
+}
+
+.map-tiles {
+    filter: saturate(0.8) brightness(1.1);
+}
+
+.dark .map-tiles {
+    filter: saturate(0.7) brightness(0.7) contrast(1.2);
+}
+
+/* Touch-friendly adjustments for mobile */
+@media (max-width: 640px) {
+    .leaflet-control-zoom {
+        margin-right: 8px !important;
+        margin-top: 8px !important;
+    }
+    
+    .leaflet-control-zoom a {
+        width: 36px !important;
+        height: 36px !important;
+        line-height: 36px !important;
+        font-size: 20px !important;
+    }
+}
+
+/* Golden ratio utility classes */
+.golden-ratio-container {
+    aspect-ratio: 1.618 / 1;
+}
+
+.golden-ratio-reverse {
+    aspect-ratio: 1 / 1.618;
+}
